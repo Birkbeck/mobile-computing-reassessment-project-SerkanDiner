@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             MovieTrackerAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Serkan",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
