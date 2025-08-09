@@ -5,7 +5,7 @@
 # 📱 Movie Tracker – Coursework 1
 
 ## 🎯 Project Overview
-This repository contains **Coursework 1** for the *Mobile Computing 2025* module.  
+This repository contains **Coursework 1** for the *Mobile Computing Reassessment Project* .  
 The aim of this stage is to design and implement the **UI of an Android application** (in Kotlin) for tracking movies, without yet implementing the full business logic.
 
 Key objectives achieved:
