@@ -35,12 +35,14 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        // Keeping Compose enabled so existing code compiles,
+        // even though CW1 uses XML layouts.
         compose = true
     }
 }
 
 dependencies {
-
+    // --- EXISTING (Compose) ---
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -56,4 +58,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // --- NEW (View system for XML layouts used in CW1) ---
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0") // for <CoordinatorLayout>
 }

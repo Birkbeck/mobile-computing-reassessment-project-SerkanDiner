@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Movie - John Wick"/>
+
+    <TextView
+        android:id="@+id/tvDetailTitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Movie Name - John Wick" android:textStyle="bold"
+        android:textSize="18sp" android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvDetailCategory"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Category: Action" android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="24dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/delete"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEdit" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/edit" android:layout_marginStart="12dp"/>
+    </LinearLayout>
+</LinearLayout>

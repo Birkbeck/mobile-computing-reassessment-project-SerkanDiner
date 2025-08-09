@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="movie_categories">
+        <item>All</item>
+        <item>Comedy</item>
+        <item>Action &amp; Adventure</item>
+        <item>Drama</item>
+        <item>Science Fiction &amp; Fantasy</item>
+        <item>Horror &amp; Thriller</item>
+        <item>Other</item>
+    </string-array>
+</resources>
