@@ -2,48 +2,79 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-    <!-- Top bar -->
+    <!-- Taller app bar so the logo can breathe -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/app_name"
-        app:titleCentered="true" />
+        android:layout_height="72dp"
+        android:background="@color/black"
+        app:contentInsetStartWithNavigation="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:elevation="4dp">
+
+        <!-- BIG centered logo (explicit size) -->
+        <ImageView
+            android:id="@+id/ivToolbarLogo"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo_red"
+            android:scaleType="fitCenter" />
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!-- Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:padding="16dp"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="72dp">
 
-        <!-- Category dropdown (UI only for CW1) -->
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/spnCategory"
+        <!-- Category dropdown: white bg + red outline -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/filter_hint"
-            android:inputType="none" />
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/primary_color"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidthFocused="3dp">
 
-        <!-- List placeholder (no adapter in CW1) -->
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spnCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Movie list -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMovies"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="12dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
-    <!-- Add Movie FAB (just UI) -->
+    <!-- FAB in red -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
         android:contentDescription="@string/add_movie"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"/>
+        android:backgroundTint="@color/primary_color"
+        android:tint="@color/white" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
