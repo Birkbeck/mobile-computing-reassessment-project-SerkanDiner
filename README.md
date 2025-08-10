@@ -1,11 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zHeiFeFc)
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zHeiFeFc)
+
 
 # 📱 Movie Tracker – Coursework 1
 
 ## 🎯 Project Overview
-This repository contains **Coursework 1** for the *Mobile Computing 2025* module.  
+This repository contains **Coursework 1** for the *Mobile Computing Reassessment Project* .  
 The aim of this stage is to design and implement the **UI of an Android application** (in Kotlin) for tracking movies, without yet implementing the full business logic.
 
 Key objectives achieved:
