@@ -10,7 +10,6 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 class AddMovieActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_movie)
@@ -20,13 +19,16 @@ class AddMovieActivity : AppCompatActivity() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = false
 
-        // Toolbar: we use a centered logo; clear any title just in case. Back arrow works via XML.
+        // Toolbar: set brand title + red color + back arrow
         findViewById<MaterialToolbar>(R.id.toolbarAdd).apply {
-            title = ""
+            title = getString(R.string.brand_title)
+            setTitleTextColor(ContextCompat.getColor(this@AddMovieActivity, R.color.primary_color))
             setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+            // Center title defensively (older libs may ignore)
+            try { isTitleCentered = true } catch (_: Throwable) {}
         }
 
-        // Category dropdown (white panel for readability over black UI)
+        // Category dropdown (so the field isn't empty)
         val etCategory = findViewById<MaterialAutoCompleteTextView>(R.id.etCategory)
         val categories = listOf(
             "Action & Adventure",

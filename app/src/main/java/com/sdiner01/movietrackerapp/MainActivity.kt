@@ -24,13 +24,18 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = false
 
-        // Toolbar: use centered logo only, no title
-        findViewById<MaterialToolbar>(R.id.topAppBar).title = ""
+        // Toolbar: enforce red title + centered
+        findViewById<MaterialToolbar>(R.id.topAppBar).apply {
+            title = getString(R.string.brand_title)
+            setTitleTextColor(ContextCompat.getColor(this@MainActivity, R.color.primary_color))
+            try { isTitleCentered = true } catch (_: Throwable) {}
+        }
 
         val rvMovies = findViewById<RecyclerView>(R.id.rvMovies)
         val fabAdd = findViewById<FloatingActionButton>(R.id.fabAdd)
         val spnCategory = findViewById<MaterialAutoCompleteTextView>(R.id.spnCategory)
 
+        // TEMP sample data for CW1 preview
         val sampleMovies = listOf(
             Movie("Inception", "Science Fiction & Fantasy"),
             Movie("The Dark Knight", "Action & Adventure"),
@@ -39,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             Movie("Parasite", "Thriller & Mystery")
         )
 
+        // Category dropdown
         val categories = listOf(
             "All",
             "Action & Adventure",
@@ -55,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             setOnClickListener { showDropDown() }
         }
 
+        // RecyclerView
         rvMovies.layoutManager = LinearLayoutManager(this)
         rvMovies.adapter = MovieAdapter(sampleMovies) { movie ->
             startActivity(
@@ -65,6 +72,7 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        // FAB → Add movie
         fabAdd.setOnClickListener {
             startActivity(Intent(this, AddMovieActivity::class.java))
         }

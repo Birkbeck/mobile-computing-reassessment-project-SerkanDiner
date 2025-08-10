@@ -5,28 +5,19 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
-    <!-- Taller app bar so the logo can breathe -->
+    <!-- Toolbar with centered brand text -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:background="@color/black"
+        android:title="@string/brand_title"
+        android:titleTextAppearance="@style/ToolbarTitleRed"
+        app:titleCentered="true"
         app:contentInsetStartWithNavigation="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
-        app:elevation="4dp">
-
-        <!-- BIG centered logo (explicit size) -->
-        <ImageView
-            android:id="@+id/ivToolbarLogo"
-            android:layout_width="160dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/logo_red"
-            android:scaleType="fitCenter" />
-    </com.google.android.material.appbar.MaterialToolbar>
+        app:elevation="4dp" />
 
     <!-- Content -->
     <LinearLayout
@@ -37,13 +28,37 @@
         android:padding="16dp"
         android:layout_marginTop="72dp">
 
-        <!-- Category dropdown: white bg + red outline -->
+        <!-- Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bannerCard"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/ivBanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/movie_banner" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Category dropdown -->
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/filter_hint"
+            android:layout_marginBottom="12dp"
+            android:hint="@null"
+            app:endIconMode="dropdown_menu"
             app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
             app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/primary_color"
             app:boxStrokeWidth="2dp"
@@ -54,7 +69,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:textColor="@color/black" />
+                android:focusable="false"
+                android:textColor="@color/black"
+                android:dropDownVerticalOffset="8dp"
+                android:dropDownHeight="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Movie list -->

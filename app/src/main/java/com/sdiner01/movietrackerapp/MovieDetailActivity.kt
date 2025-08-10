@@ -32,9 +32,13 @@ class MovieDetailActivity : AppCompatActivity() {
         val title = intent.getStringExtra("title") ?: "Unknown Title"
         val category = intent.getStringExtra("category") ?: "Unknown Category"
 
-        // Toolbar: centered logo only (title cleared). Back arrow works via XML.
-        toolbar.title = ""
-        toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        // Toolbar: brand title in red (centered) + back arrow
+        toolbar.apply {
+            this.title = getString(R.string.brand_title)
+            setTitleTextColor(ContextCompat.getColor(this@MovieDetailActivity, R.color.primary_color))
+            setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+            try { isTitleCentered = true } catch (_: Throwable) {}
+        }
 
         // Bind movie info
         tvTitle.text = title
