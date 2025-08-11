@@ -36,7 +36,7 @@ The initial design of the application was created in wireframe format to plan th
 This ensured that the UI implementation followed a structured, pre-approved design.
 
 📄 **View the wireframe here**:  
-[Movie Tracker Wireframe (PDF)](Movie-tracker-wireframe.pdf)
+[Movie Tracker Wireframe (PDF)](wireframe-the-movie-app.pdf)
 
 ---
 
