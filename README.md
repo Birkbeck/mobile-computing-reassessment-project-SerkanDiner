@@ -54,7 +54,7 @@ This ensured that the UI implementation followed a structured, pre-approved desi
 ## 📋 CW1 Requirements Mapping
 | Coursework 1 Requirement | How It Was Achieved |
 |--------------------------|----------------------|
-| Create wireframes with descriptions | Created `Movie-tracker-wireframe.pdf` showing all screens and describing elements. |
+| Create wireframes with descriptions | Created `wireframe-the-movie-app.pdf` showing all screens and describing elements. |
 | Basic Android project created | Project set up in Kotlin with package `com.sdiner01.movietrackerapp`. |
 | Activities/fragments as placeholders | `MainActivity`, `AddMovieActivity`, and `MovieDetailActivity` implemented. |
 | Static UI layouts only (no logic) | All layouts created in XML with placeholder text/mock data. |
